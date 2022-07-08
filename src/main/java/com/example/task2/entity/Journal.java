@@ -17,6 +17,7 @@ import java.util.List;
 public class Journal extends TemplateEntity {
 
     @OneToOne
+    @JoinColumn(unique = true)
     private Group group;
 
     @ManyToMany

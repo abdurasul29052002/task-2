@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"TUIT\",\r\n    \"address\": \"Yunusobod\",\r\n    \"open_year\": 1955\r\n}",
+							"raw": "{\r\n    \"name\": \"TUIT\",\r\n    \"address\": \"Toshkent\",\r\n    \"open_year\": 1955\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -381,6 +381,28 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get groups by faculty id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/group/by_faculty_id/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"group",
+								"by_faculty_id",
+								"2"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -491,6 +513,28 @@
 								"api",
 								"subject",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get subjects by student id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/subject/by_student_id/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"subject",
+								"by_student_id",
+								"4"
 							]
 						}
 					},
@@ -747,6 +791,64 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Search student",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/student/find?search=t",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"student",
+								"find"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "t"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get students by group id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/student/by_group_id?groupId=2&journalId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"student",
+								"by_group_id"
+							],
+							"query": [
+								{
+									"key": "groupId",
+									"value": "2"
+								},
+								{
+									"key": "journalId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -760,7 +862,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"ball\": 3,\r\n    \"student\":{\r\n        \"id\": 1\r\n    },\r\n    \"journal\":{\r\n        \"id\": 1\r\n    }\r\n}",
+							"raw": "{\r\n    \"ball\": 90,\r\n    \"student\":{\r\n        \"id\": 3\r\n    },\r\n    \"journal\":{\r\n        \"id\": 2\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

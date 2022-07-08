@@ -39,4 +39,9 @@ public class GroupController {
     public ApiResponse deleteGroup(@PathVariable Long id){
         return groupService.deleteById(id);
     }
+
+    @GetMapping ("/by_faculty_id/{facultyId}")
+    public List<GroupDTO> getGroupByFacultyId(@PathVariable Long facultyId){
+        return groupService.getGroupsByFacultyId(facultyId);
+    }
 }

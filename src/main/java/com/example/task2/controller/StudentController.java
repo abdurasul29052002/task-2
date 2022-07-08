@@ -40,4 +40,15 @@ public class StudentController {
     public ApiResponse deleteMark(@PathVariable Long id){
         return studentService.deleteById(id);
     }
+
+    @GetMapping("/find")
+    public List<StudentDTO> searchStudents(@RequestParam(value = "search") String targetWord){
+        return studentService.searchStudents(targetWord);
+    }
+
+    @GetMapping("/by_group_id")
+    public List<StudentDTO> getStudentsByGroupId(@RequestParam Long groupId){
+        return studentService.getStudentsByGroupId(groupId);
+    }
+
 }

@@ -18,9 +18,13 @@ public abstract class GenericService<E, M, R extends JpaRepository<E, Long>, MAP
 
     @SneakyThrows
     public M save(M model) {
-        E entity = mapper.modelToEntity(model);
-        E savedEntity = repository.save(entity);
-        return mapper.entityToModel(savedEntity);
+        try {
+            E entity = mapper.modelToEntity(model);
+            E savedEntity = repository.save(entity);
+            return mapper.entityToModel(savedEntity);
+        }catch (Exception e){
+            throw new PSQLException();
+        }
     }
 
     @SneakyThrows

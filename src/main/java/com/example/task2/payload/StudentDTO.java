@@ -18,4 +18,7 @@ public class StudentDTO {
 
     @JsonProperty(value = "group")
     private GroupDTO group;
+
+    @JsonProperty(value = "ball")
+    private Integer ball;
 }

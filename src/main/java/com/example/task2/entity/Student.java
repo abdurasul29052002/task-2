@@ -21,4 +21,12 @@ public class Student extends TemplateEntity {
 
     @OneToMany(mappedBy = "student", cascade = CascadeType.REMOVE)
     private List<Mark> marks;
+
+    @Transient
+    private Integer ball;
+
+    public Student(Long id, String name, Integer ball) {
+        super(id, name);
+        this.ball = ball;
+    }
 }

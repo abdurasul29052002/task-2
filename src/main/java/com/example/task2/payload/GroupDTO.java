@@ -21,4 +21,7 @@ public class GroupDTO {
 
     @JsonProperty(value = "faculty")
     private FacultyDTO faculty;
+
+    @JsonProperty(value = "count_of_students")
+    private Integer countOfStudents;
 }

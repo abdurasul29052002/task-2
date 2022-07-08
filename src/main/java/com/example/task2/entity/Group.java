@@ -30,4 +30,14 @@ public class Group extends TemplateEntity {
 
     @OneToMany(mappedBy = "group", cascade = CascadeType.REMOVE)
     private List<Subject> subjects;
+
+    @Transient
+    private Integer countOfStudents;
+
+    public Integer getCountOfStudents() {
+        if (this.students!=null){
+            this.countOfStudents=students.size();
+        }
+        return this.countOfStudents;
+    }
 }

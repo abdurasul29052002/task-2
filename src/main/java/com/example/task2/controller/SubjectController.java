@@ -41,4 +41,9 @@ public class SubjectController {
     public ApiResponse deleteSubject(@PathVariable Long id){
         return subjectService.deleteById(id);
     }
+
+    @GetMapping("/by_student_id/{studentId}")
+    public List<SubjectDTO> getSubjectsByStudentId(@PathVariable Long studentId){
+        return subjectService.getSubjectsByStudentId(studentId);
+    }
 }

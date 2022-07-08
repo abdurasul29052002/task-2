@@ -7,6 +7,8 @@ import com.example.task2.repository.GroupRepository;
 import com.example.task2.service.template.GenericService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class GroupService extends GenericService<Group, GroupDTO, GroupRepository, GroupMapper> {
     public GroupService(GroupRepository repository, GroupMapper mapper) {
@@ -15,5 +17,9 @@ public class GroupService extends GenericService<Group, GroupDTO, GroupRepositor
     public GroupDTO getGroupById(Long id) {
         Group group = findById(id);
         return mapper.entityToModel(group);
+    }
+
+    public List<GroupDTO> getGroupsByFacultyId(Long facultyId) {
+        return mapper.entitiesToModels(repository.findAllByFacultyId(facultyId));
     }
 }
