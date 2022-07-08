@@ -825,7 +825,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/student/by_group_id?groupId=2&journalId=2",
+							"raw": "http://localhost:8082/api/student/by_group_id?groupId=1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -839,11 +839,7 @@
 							"query": [
 								{
 									"key": "groupId",
-									"value": "2"
-								},
-								{
-									"key": "journalId",
-									"value": "2"
+									"value": "1"
 								}
 							]
 						}
